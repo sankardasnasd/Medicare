@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+Department
+{% endblock %}
+{% block content %}
+
+<style>
+body{
+    background-image: url('/static/images/h1.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+ }</style>
+<div class="text-center  p-3 my-3">
+<h1> <b>Our Department </b> </h1><hr>
+</div>
+<!-- we have one or more Departments so we use via with help of forloop -->
+{% for d in dept %}
+
+<div class="container p-2">
+    <div class="row ">
+        <div class=" col mx-auto w-50 bg-secondary text-center text-white p-3 my-4 border border-warning">
+            <h2 class="">{{ d.department_name }}</h2><br><hr>
+            <h6>{{ d.department_description }}</h6>
+            </div>
+     
+    </div>
+
+    
+</div>
+
+{% endfor %}
+
+{% endblock %}

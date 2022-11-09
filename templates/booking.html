@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+   body{
+      background-image: url('/static/images/h1.jpg'); 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+   }
+</style>
+
+<h1 class="text-center p-3"><b>Make An Appointment</b></h1><hr>
+
+<div class="container w-50  text-center p-3 my-2">
+ <form action="" method="POST">
+   {% csrf_token %}
+    <!-- {{form.as_p }} -->
+    {{ form|crispy }} <br>
+    <button class="btn btn-primary mb-4 w-50 my-3" type="submit">Submit</button>
+
+ </form>
+</div>
+
+{% endblock %}

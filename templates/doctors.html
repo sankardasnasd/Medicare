@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  body{
+      background-image: url('/static/images/w2.webp'); 
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+   }
+</style>
+<h1 class="text-center bg-warning">  Our Doctors</h1>
+<hr>
+
+<div class="container text-center">
+
+{% for d in doctors %}
+
+ <div class="card text-center mx-3 my-5" style="width: 18rem; display: inline-block;">
+    <img src="{{d.doctor_image.url}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Dr.{{d.doctor_name}}</h5>
+      <p class="card-text">{{d.doctor_specialized}}</p>
+      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+      <h6>{{d.department_name}}</h6>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+
+
+
+{% endblock %}
